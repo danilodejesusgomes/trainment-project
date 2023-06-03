@@ -15,5 +15,10 @@ const resolvers = {
 };
 
 const server = new ApolloServer({ typeDefs, resolvers });
-const info = await startStandaloneServer(server, { listen: { port: 4000 } });
-console.log(`🚀 Server ready at ${info.url}`);
+
+async function startServerGraphQL( server: ApolloServer) {
+    const info = await startStandaloneServer(server, { listen: { port: 4000 } });
+    console.log(`🚀 Server ready at ${info.url}`);
+}
+
+startServerGraphQL(server);
