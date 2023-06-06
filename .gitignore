@@ -6,3 +6,4 @@ yarn-error.log
 .vscode
 ```
 packages/web-awsimulate/.DS_Store
+packages/web-awsimulate/app/.DS_Store

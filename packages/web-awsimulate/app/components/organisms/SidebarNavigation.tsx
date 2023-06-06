@@ -34,8 +34,8 @@ const SidebarNavigation: React.FC = () => {
       />
       <div className="flex flex-row items-center">
         <img 
-          src="/home/danilo-gomes/git-workspace/trainment-project/packages/web-awsimulate/app/assets/AWSimulate_Logo.png" alt="Logo" 
-          className="w-10 h-10 border mr-2" />
+          src="https://awsimulate.s3.amazonaws.com/imagens/AWSimulate_Logo.png" alt="Logo" 
+          className="w-12 h-12 mr-2" />
         { open ?
           <h1 className="text-awsimulate-color-bg-white text-2xl font-bold mt-2">AWSimulate</h1>
         : null 
