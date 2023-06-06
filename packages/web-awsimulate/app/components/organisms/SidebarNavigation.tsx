@@ -1,9 +1,12 @@
 import { useState} from 'react';
-import { BsArrowLeftShort } from "react-icons/bs"
+import { BsArrowLeftShort, BsSearch } from "react-icons/bs"
+import getMainMenus from '../../services/backend/getMainMenus';
 
 const SidebarNavigation: React.FC = () => {
 
   const [open, setOpen] = useState(false)
+
+  const menus = getMainMenus;
 
   return (
     <aside className={`
@@ -28,19 +31,111 @@ const SidebarNavigation: React.FC = () => {
           absolute
           -right-3
             top-9
-          
         `}
         onClick={() => setOpen(!open)}
       />
+      
       <div className="flex flex-row items-center">
         <img 
           src="https://awsimulate.s3.amazonaws.com/imagens/AWSimulate_Logo.png" alt="Logo" 
-          className="w-12 h-12 mr-2" />
-        { open ?
-          <h1 className="text-awsimulate-color-bg-white text-2xl font-bold mt-2">AWSimulate</h1>
-        : null 
-        }
+          className="w-12 h-12 mr-2" 
+        />
+        <h1 className={`
+            text-awsimulate-color-bg-white
+            origin-left 
+            text-2xl 
+            font-bold 
+            duration-300
+            ${!open && 'scale-0' }
+          `}
+        >AWSimulate</h1>
       </div>
+
+      <div className="
+        flex  
+        items-center
+        rounded-md
+        bg-awsimulate-color-blue-darkest
+        mt-6
+        px-4
+        py-2
+      ">
+        <BsSearch className="
+          text-awsimulate-color-gray-dark 
+          text-lg 
+          block 
+          float-left 
+          cursor-pointer
+          mr-2
+        "/>
+        <input
+          type="search"
+          placeholder="Search" 
+          className={`
+            text-base 
+            bg-transparent 
+            w-full
+            text-awsimulate-color-bg-white
+            focus:outline-none
+            ${!open && 'hidden'}
+          `}
+        />
+      </div>
+
+      <ul className='pt-2'>
+        {menus.map((menu, index) => (
+          <li 
+            key={index}
+            className={`
+              text-awsimulate-color-gray-darker
+              text-sm
+              flex-items-center
+              gap-x-4
+              cursor-pointer
+              p-2
+              hover:bg-awsimulate-color-gray-dark
+              rounded-md
+              mt-2 ${menu.spacing && 'mt-4'}
+
+            `}
+          >
+            <span className={`
+              text-awsimulate-color-bg-white
+              text-sm
+              font-semibold
+              block
+              mt-4
+              ${!open && 'hidden'}
+            `}>
+              {menu.title}
+            </span>
+            <hr className={`
+              border-awsimulate-color-blue-dark
+              opacity-25
+              ${!open && 'hidden'}
+            `}/>
+
+            <ul className={`
+              ${!open && 'hidden'}
+            `}>
+              {menu.submenu.map((submenu, index) => (
+                <li key={index}>
+                  <span className={`
+                    text-awsimulate-color-bg-white
+                    text-sm
+                    font-light
+                    block
+                    mt-4
+                  `}>
+                    {submenu.title}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+
     </aside>
   );
 };
