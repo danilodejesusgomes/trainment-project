@@ -1,11 +1,11 @@
-interface User {
-    name: string;
-    age: number;
+import db_awsimulate from "../data-architecture/database";
+
+interface Person {
+    idPerson: number;
+    namePerson: string;
+    emailPerson: string;
 };
 
-const user: User = {
-    name: 'John',
-    age: 30
-};
-
-console.log(user);
+const person = db_awsimulate('Person').select('*').then((data: Person[]) => {
+    console.log(data);
+});
