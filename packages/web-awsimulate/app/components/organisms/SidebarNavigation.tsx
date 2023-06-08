@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import { BsArrowLeftShort, BsSearch } from "react-icons/bs"
 import getMainMenus from '../../services/backend/getMainMenus';
 
