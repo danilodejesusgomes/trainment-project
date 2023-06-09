@@ -22,7 +22,7 @@ const knexConfiguration: Knex.Config = {
     extension: 'ts'
   },
   seeds: {
-    directory: path.resolve(__dirname, 'data-architecture', 'seeds', 'development'),
+    directory: path.resolve(__dirname, 'data-architecture', 'database', 'seeds', 'development'),
   }
 }
 

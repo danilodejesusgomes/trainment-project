@@ -11,6 +11,11 @@ export async function up(knex: Knex): Promise<void> {
     table.integer('id').notNullable();
     table.string('name', 100).notNullable();
     table.string('email', 256).notNullable().unique();
+    table.string('password', 256).notNullable();
+    table.integer('token_validation_email', 6).nullable();
+    table.timestamp('token_validation_email_expiration').nullable();
+    table.integer('token_reset_password', 6).nullable();
+    table.timestamp('token_reset_password_expiration').nullable();
 
     table.primary(['id']);
   })
