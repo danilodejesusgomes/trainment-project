@@ -11,7 +11,7 @@ export interface ExamDb {
 
 const getExamTable  = () => db_awsimulate.table('Exam');
 
-export async function getExam(
+export async function getExamDb(
   idExam: number
   ): Promise<ExamDb> {
   const exam: ExamDb = await getExamTable()

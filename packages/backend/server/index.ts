@@ -1,6 +1,6 @@
-import { getPerson } from "./layers/db/entityPerson";
+import { getPersonDb } from "./layers/db/entityPerson";
 
 const person = async () => {
-    await getPerson(1);
+    await getPersonDb(1);
     console.log('INDEX => ', person);
 }

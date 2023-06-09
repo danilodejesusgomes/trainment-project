@@ -13,7 +13,7 @@ export interface PersonDb {
 
 const getPersonTable  = () => db_awsimulate.table('Person');
 
-export async function getPerson(
+export async function getPersonDb(
   idPerson: number
   ): Promise<PersonDb> {
   const person: PersonDb = await getPersonTable()

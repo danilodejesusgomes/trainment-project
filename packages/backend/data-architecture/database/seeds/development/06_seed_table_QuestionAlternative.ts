@@ -11,25 +11,25 @@ export async function seed(knex: Knex): Promise<void> {
         // -----------------------------------------------------
         // Question 1 - Alternatives
         // -----------------------------------------------------
-        {   idQuestionAlternative: 1, 
+        {   id: 1, 
             Question_id: 1,
             rightAlternative: true,
             description: "O cliente é responsável pela configuração e a AWS é responsável por fazer backups.", 
             explicationWhyResult: 'O cliente é responsável pela configuração e a AWS é responsável por fazer backups, é a resposta correta.'
         },
-        {   idQuestionAlternative: 2, 
+        {   id: 2, 
             Question_id: 1,
             rightAlternative: false,
             description: "AWS é responsável pela configuração e o usuário é responsável por fazer backups.", 
             explicationWhyResult: 'AWS é responsável pela configuração e o usuário é responsável por fazer backups, está incorreto. Isso ocorre ao contrário, os usuários são responsáveis pela configuração e a AWS é responsável por realizar backups.'
         },
-        {   idQuestionAlternative: 3, 
+        {   id: 3, 
             Question_id: 1,
             rightAlternative: false,
             description: "AWS é responsável por ambas as tarefas.", 
             explicationWhyResult: 'AWS é responsável por ambas as tarefas, está incorreto. Isso não é verdade, pois os usuários devem configurar o PITR.'
         },
-        {   idQuestionAlternative: 4, 
+        {   id: 4, 
             Question_id: 1,
             rightAlternative: false,
             description: "O cliente é responsável por ambas as tarefas.", 
@@ -39,25 +39,25 @@ export async function seed(knex: Knex): Promise<void> {
         // -----------------------------------------------------
         // Question 2 - Alternatives
         // -----------------------------------------------------
-        {   idQuestionAlternative: 1, 
+        {   id: 1, 
             Question_id: 2,
             rightAlternative: true,
             description: "Amazon EC2.", 
             explicationWhyResult: 'CORRECT: "Amazon EC2" é a resposta correta'
         },
-        {   idQuestionAlternative: 2, 
+        {   id: 2, 
             Question_id: 2,
             rightAlternative: false,
             description: "AWS Lambda.", 
             explicationWhyResult: 'INCORRECT: "AWS Lambda" está incorreto. Este é um serviço sem servidor e você não precisa gerenciar patches.'
         },
-        {   idQuestionAlternative: 3, 
+        {   id: 3, 
             Question_id: 2,
             rightAlternative: false,
             description: "AWS Fargate.", 
             explicationWhyResult: 'INCORRECT: "AWS Fargate" está incorreto. Este é um serviço sem servidor e você não precisa gerenciar patches.'
         },
-        {   idQuestionAlternative: 4, 
+        {   id: 4, 
             Question_id: 2,
             rightAlternative: false,
             description: "Amazon DynamoDB.", 
@@ -68,31 +68,31 @@ export async function seed(knex: Knex): Promise<void> {
         // -----------------------------------------------------
         // Question 3 - Alternatives
         // -----------------------------------------------------
-        {   idQuestionAlternative: 1, 
+        {   id: 1, 
             Question_id: 3,
             rightAlternative: true,
             description: "Backups automatizados.", 
             explicationWhyResult: 'CORRECT: "Backups automatizados" é uma resposta correta.'
         },
-        {   idQuestionAlternative: 2, 
+        {   id: 2, 
             Question_id: 3,
             rightAlternative: true,
             description: "Patch de software.", 
             explicationWhyResult: 'CORRECT: "Patch de software" também é uma resposta correta.'
         },
-        {   idQuestionAlternative: 3, 
+        {   id: 3, 
             Question_id: 3,
             rightAlternative: false,
             description: "Gerenciamento de esquema.", 
             explicationWhyResult: 'INCORRECT: "Gerenciamento de esquema" está incorreto. Este não é um recurso do serviço gerenciado.'
         },
-        {   idQuestionAlternative: 4, 
+        {   id: 4, 
             Question_id: 3,
             rightAlternative: false,
             description: "Indexação de tabelas.", 
             explicationWhyResult: 'INCORRECT: "Indexação de tabelas" está incorreto. Este não é um recurso do serviço gerenciado.'
         },
-        {   idQuestionAlternative: 5, 
+        {   id: 5, 
             Question_id: 3,
             rightAlternative: false,
             description: "Acesso root ao sistema operacional.", 
@@ -102,25 +102,25 @@ export async function seed(knex: Knex): Promise<void> {
         // -----------------------------------------------------
         // Question 4 - Alternatives
         // -----------------------------------------------------
-        {   idQuestionAlternative: 1, 
+        {   id: 1, 
             Question_id: 4,
             rightAlternative: true,
             description: "Migrar o banco de dados para o Amazon RDS e habilitar o recurso Multi-AZ.", 
             explicationWhyResult: 'CORRECT: "Migrar o banco de dados para o Amazon RDS e habilitar o recurso Multi-AZ" é a resposta correta.'
         },
-        {   idQuestionAlternative: 2, 
+        {   id: 2, 
             Question_id: 4,
             rightAlternative: false,
             description: "Configurar um Elastic Load Balancer na frente da instância EC2.", 
             explicationWhyResult: 'INCORRECT: "Configurar um Elastic Load Balancer na frente da instância EC2" está incorreto. Você não pode usar um ELB para distribuir o tráfego para um banco de dados e com uma única instância não há nenhum benefício aqui.'
         },
-        {   idQuestionAlternative: 3, 
+        {   id: 3, 
             Question_id: 4,
             rightAlternative: false,
             description: "Configurar recuperação automática do EC2 para mover a instância para outra região.", 
             explicationWhyResult: 'INCORRECT: "Configurar recuperação automática do EC2 para mover a instância para outra região" está incorreto. O recurso de recuperação automática do EC2 move automaticamente a instância para outro host, não para outra região.'
         },
-        {   idQuestionAlternative: 4, 
+        {   id: 4, 
             Question_id: 4,
             rightAlternative: false,
             description: "Defina o valor DeleteOnTermination como falso para o volume raiz do EBS.", 
@@ -130,25 +130,25 @@ export async function seed(knex: Knex): Promise<void> {
         // -----------------------------------------------------
         // Question 5 - Alternatives
         // -----------------------------------------------------
-        {   idQuestionAlternative: 1, 
+        {   id: 1, 
             Question_id: 5,
             rightAlternative: true,
             description: "RDS simplifica as tarefas de administração de banco de dados relacional.", 
             explicationWhyResult: 'CORRECT: "RDS simplifica as tarefas de administração de banco de dados relacional" é a resposta correta.'
         },
-        {   idQuestionAlternative: 2, 
+        {   id: 2, 
             Question_id: 5,
             rightAlternative: false,
             description: "Os bancos de dados RDS são dimensionados automaticamente com base na carga.", 
             explicationWhyResult: 'INCORRECT: "Os bancos de dados RDS são dimensionados automaticamente com base na carga" está incorreto. Isso não é verdade, o escalonamento automático de armazenamento é possível, mas para computação, ele escalona alterando o tipo de instância (manual).'
         },
-        {   idQuestionAlternative: 3, 
+        {   id: 3, 
             Question_id: 5,
             rightAlternative: false,
             description: "RDS fornece 99,99999999999% de confiabilidade e durabilidade.", 
             explicationWhyResult: 'INCORRECT: "RDS fornece 99,99999999999% de confiabilidade e durabilidade" está incorreto. Isso não é verdade no Amazon RDS.'
         },
-        {   idQuestionAlternative: 4, 
+        {   id: 4, 
             Question_id: 5,
             rightAlternative: false,
             description: "RDS permite que os usuários ajustem dinamicamente os recursos de CPU e RAM.", 

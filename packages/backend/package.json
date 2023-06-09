@@ -2,6 +2,7 @@
   "name": "@trainment-project/backend",
   "version": "1.0.0",
   "description": "trainment project - backend ",
+  "private": true,
   "main": "index.js",
   "type": "commonjs",
   "author": "Danilo Gomes",

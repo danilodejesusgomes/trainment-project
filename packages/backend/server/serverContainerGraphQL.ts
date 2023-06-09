@@ -2,9 +2,8 @@ import { ApolloServer } from '@apollo/server';
 import { expressMiddleware as apolloMiddleware } from '@apollo/server/express4';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { authMiddleware, handleLogin } from './authentication';
-import { readFile } from 'fs/promises';
 import { resolvers } from './layers/graphQL/resolvers';
-import typeDefs from './layers/graphQL/schema.graphql';
+import  typeDefs  from './layers/graphQL/typeDefs';
 import cors from 'cors';
 import express from 'express';
 
@@ -14,8 +13,6 @@ app.use(cors(), express.json(), authMiddleware);
 app.post('/login', handleLogin);
 
 app.listen({ port: PORT }, async () => {
-
-    //const typeDefs = await readFile('./layers/graphQL/schema.graphql', 'utf8')
 
     const apolloServer = new ApolloServer({ typeDefs, resolvers });
     await apolloServer.start();

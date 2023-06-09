@@ -86,7 +86,7 @@ export async function up(knex: Knex): Promise<void> {
   // Table `db_awsimulate`.`QuestionAlternative`
   // -----------------------------------------------------
   .createTable('QuestionAlternative', function(table) {
-    table.integer('idQuestionAlternative')
+    table.integer('id')
       .notNullable();
     table.integer('Question_id')
       .notNullable()
@@ -97,7 +97,7 @@ export async function up(knex: Knex): Promise<void> {
     table.tinyint('rightAlternative').notNullable();
     table.string('explicationWhyResult', 1000).notNullable();
 
-    table.primary(['idQuestionAlternative', 'Question_id']);
+    table.primary(['id', 'Question_id']);
   })
 
   // -----------------------------------------------------

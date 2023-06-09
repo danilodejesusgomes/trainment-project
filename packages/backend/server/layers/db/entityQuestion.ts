@@ -1,23 +1,24 @@
 import db_awsimulate from "../../../data-architecture/database";
 
-export interface ExamDb {
+export interface QuestionDb {
   id: number;
-  nameExam: string;
-  descriptionExam: string;
-  versionExam: string;
-  timeDuration: string;
-  quantityTotalQuestions: number;
+  descriptionQuestion: string;
+  explicationQuestionResult: string;
+  QuestionSubject_id: number;
+  QuestionType_id: number;
 };
 
-const getExamTable  = () => db_awsimulate.table('Exam');
+const getQuestionTable  = () => db_awsimulate.table('Question');
 
-export async function getExam(
-  idExam: number
-  ): Promise<ExamDb> {
-  const exam: ExamDb = await getExamTable()
-    .first()
-    .where({ id: idExam });
+export async function getQuestionDb(
+  idQuestion: number
+  ): Promise<QuestionDb> {
   
-    console.log('Exam => ', exam);
-  return exam;
+  console.log('idQuestion is searching => ', idQuestion)
+  const question: QuestionDb = await getQuestionTable()
+    .first()
+    .where({ id: idQuestion });
+
+    console.log('Question => ', question);  
+  return question;
 }
