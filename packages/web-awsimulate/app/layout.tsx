@@ -1,3 +1,4 @@
+import React from 'react';
 import './globals.css';
 
 export const metadata = {
@@ -13,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-zinc-100 text-blue-500'>{children}</body>
+      <body className="bg-zinc-100 text-blue-500">{children}</body>
     </html>
   );
 }

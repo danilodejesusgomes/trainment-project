@@ -4,12 +4,26 @@ import { getPerson } from '../useCase/Person';
 import { getExam } from '../useCase/Exam';
 import { getQuestionType } from '../useCase/QuestionType';
 import { getQuestionSubject } from '../useCase/QuestionSubject';
-import { getQuestionAlternative, listQuestionAlternativesByQuestionId } from '../useCase/QuestionAlternative';
+import {
+  getQuestionAlternative,
+  listQuestionAlternativesByQuestionId,
+} from '../useCase/QuestionAlternative';
 
+function notFoundError(message: string) {
+  return new GraphQLError(message, {
+    extensions: { code: 'NOT_FOUND' },
+  });
+}
+
+function unauthorizedError(message: string) {
+  return new GraphQLError(message, {
+    extensions: { code: 'UNAUTHORIZED' },
+  });
+}
 
 export const resolvers = {
   Query: {
-    Person: async (_root: any, { idPerson } : any ) => {
+    Person: async (_root: any, { idPerson }: any) => {
       const person = await getPerson(idPerson);
       if (!person) {
         throw notFoundError('No Person found with id ' + idPerson);
@@ -44,39 +58,35 @@ export const resolvers = {
     QuestionSubject: async (_root: any, { idQuestionSubject }: any) => {
       const questionSubject = await getQuestionSubject(idQuestionSubject);
       if (!questionSubject) {
-        throw notFoundError('No QuestionSubject found with id ' + idQuestionSubject);
+        throw notFoundError(
+          'No QuestionSubject found with id ' + idQuestionSubject
+        );
       }
       return questionSubject;
     },
 
     QuestionAlternative: async (_root: any, { idQuestionAlternative }: any) => {
-      const questionAlternative = await getQuestionAlternative(idQuestionAlternative);
+      const questionAlternative = await getQuestionAlternative(
+        idQuestionAlternative
+      );
       if (!questionAlternative) {
-        throw notFoundError('No QuestionAlternative found with id ' + idQuestionAlternative);
+        throw notFoundError(
+          'No QuestionAlternative found with id ' + idQuestionAlternative
+        );
       }
       return questionAlternative;
     },
 
     QuestionAlternatives: async (_root: any, { idQuestion }: any) => {
-      const questionAlternative = await listQuestionAlternativesByQuestionId(idQuestion);
+      const questionAlternative = await listQuestionAlternativesByQuestionId(
+        idQuestion
+      );
       if (!questionAlternative) {
-        throw notFoundError('No QuestionAlternative found with id ' + idQuestion);
+        throw notFoundError(
+          'No QuestionAlternative found with id ' + idQuestion
+        );
       }
       return questionAlternative;
     },
-    
-
   },
 };
-
-function notFoundError(message: string) {
-  return new GraphQLError(message, {
-    extensions: { code: 'NOT_FOUND' },
-  });
-}
-
-function unauthorizedError(message: string) {
-  return new GraphQLError(message, {
-    extensions: { code: 'UNAUTHORIZED' },
-  });
-}

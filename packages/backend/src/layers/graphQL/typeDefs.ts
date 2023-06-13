@@ -1,7 +1,6 @@
 import gql from 'graphql-tag';
 
 const query = gql`
-
   type Query {
     Person(idPerson: ID!): Person
     Exam(idExam: ID!): Exam
@@ -10,7 +9,6 @@ const query = gql`
     QuestionSubject(idQuestionSubject: ID!): QuestionSubject
     QuestionAlternative(idQuestionAlternative: ID!): QuestionAlternative
     QuestionAlternatives(idQuestion: ID!): [QuestionAlternative!]
-    
   }
 
   type Person {
@@ -60,8 +58,6 @@ const query = gql`
     rightAlternative: Boolean!
     explicationWhyResult: String!
   }
-
 `;
 
 export default query;
-

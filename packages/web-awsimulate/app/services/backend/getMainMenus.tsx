@@ -6,59 +6,59 @@ export interface MenuItem {
 
 const getMainMenus: MenuItem[] = [
   {
-    title: "Dashboard",
+    title: 'Dashboard',
     spacing: true,
     submenu: [],
   },
   {
-    title: "Practice Exams",
+    title: 'Practice Exams',
     spacing: true,
     submenu: [
       {
-        title: "AWS Certified Cloud Practitioner",
+        title: 'AWS Certified Cloud Practitioner',
         spacing: false,
         submenu: [],
       },
       {
-        title: "AWS Certified Solutions Architect Associate",
+        title: 'AWS Certified Solutions Architect Associate',
         spacing: true,
         submenu: [],
       },
       {
-        title: "AWS Certified Solutions Architect Professional",
+        title: 'AWS Certified Solutions Architect Professional',
         spacing: true,
         submenu: [],
       },
     ],
   },
   {
-    title: "Courses",
+    title: 'Courses',
     spacing: false,
     submenu: [
       {
-        title: "AWS Certified Cloud Practitioner",
+        title: 'AWS Certified Cloud Practitioner',
         spacing: true,
         submenu: [],
       },
       {
-        title: "AWS Certified Solutions Architect Associate",
+        title: 'AWS Certified Solutions Architect Associate',
         spacing: false,
         submenu: [],
       },
       {
-        title: "AWS Certified Solutions Architect Professional",
+        title: 'AWS Certified Solutions Architect Professional',
         spacing: true,
         submenu: [],
       },
     ],
   },
   {
-    title: "Profile",
+    title: 'Profile',
     spacing: true,
     submenu: [],
   },
   {
-    title: "Log Out",
+    title: 'Log Out',
     spacing: true,
     submenu: [],
   },

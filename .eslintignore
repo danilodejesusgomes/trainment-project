@@ -1,0 +1,4 @@
+/*.js
+/packages/eslint-config/.eslintrc.js
+node_modules
+dist

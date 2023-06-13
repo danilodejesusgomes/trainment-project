@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2020: true,
@@ -6,26 +7,32 @@ module.exports = {
     jest: true
   },
   extends: [
-    'plugin:react/recommended',
-    'standard',
+    'airbnb-typescript/base',
+    'prettier',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
-    'prettier/standard',
-    'prettier/react'
+    'plugin:import/typescript',
+    'plugin:react/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
+    project: ['./tsconfig.json'],
     ecmaVersion: 11,
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'import'],
   rules: {
     'prettier/prettier': 'error',
-    'eslint comma-dangle': ['error', 'never'],
-    'eslint semi': 'error'
+    "import/no-extraneous-dependencies": ["error", {"includeInternal": true, "includeTypes": true}],
+    "import/no-extraneous-dependencies": ["error", 
+      {"packageDir": [
+        './',
+        './packages/backend/',
+        './packages/web-awsimulate/'
+      ]}
+    ]
   },
   settings: {
     'import/resolver': {

@@ -9,12 +9,10 @@ const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
   return (
     <button
       className="button"
-      onClick={() => 
-        {
-          console.log('Botão clicado!');
-          onClick()
-        }
-      }
+      onClick={() => {
+        console.log('Botão clicado!');
+        onClick();
+      }}
       disabled={false}
     >
       {label}

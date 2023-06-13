@@ -12,7 +12,7 @@ export default function Page() {
     <div className="flex">
       <SidebarNavigation />
       <main className="p-7">
-        <h1 className='text-2xl'> Home Page </h1>
+        <h1 className="text-2xl"> Home Page </h1>
       </main>
     </div>
   );

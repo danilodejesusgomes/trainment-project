@@ -4,13 +4,12 @@
   "description": "trainment project - backend ",
   "private": true,
   "main": "index.js",
-  "type": "commonjs",
   "author": "Danilo Gomes",
   "license": "MIT",
   "scripts": {
-    "start": "tsx server/index.ts",
-    "start:dev": "tsx watch server/serverContainerGraphQL.ts",
-    "build": "tsup server"
+    "start": "tsx src/index.ts",
+    "start:dev": "tsx watch src/serverContainerGraphQL.ts",
+    "build": "tsup src"
   },
   "dependencies": {
     "@apollo/server": "^4.7.1",

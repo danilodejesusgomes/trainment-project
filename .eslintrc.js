@@ -1,3 +1,3 @@
-const eslintConfig = require('@trainment-project/eslint-config');
+const eslintConfig = require('@trainment-project/eslint-config')
 
-export default eslintConfig;
+module.exports = eslintConfig

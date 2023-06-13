@@ -1,4 +1,4 @@
-import db_awsimulate from "./../../../data-architecture/database";
+import db_awsimulate from './../../../data-architecture/database';
 
 export interface PersonDb {
   id: number;
@@ -9,17 +9,15 @@ export interface PersonDb {
   token_validation_email_expiration: Date;
   token_reset_password: number;
   token_reset_password_expiration: Date;
-};
+}
 
-const getPersonTable  = () => db_awsimulate.table('Person');
+const getPersonTable = () => db_awsimulate.table('Person');
 
-export async function getPersonDb(
-  idPerson: number
-  ): Promise<PersonDb> {
+export async function getPersonDb(idPerson: number): Promise<PersonDb> {
   const person: PersonDb = await getPersonTable()
     .first()
     .where({ id: idPerson });
-  
-    console.log('Person => ', person);
+
+  console.log('Person => ', person);
   return person;
 }

@@ -1,4 +1,4 @@
-import { ExamDb, getExamDb } from "../db/entityExam";
+import { ExamDb, getExamDb } from '../db/entityExam';
 
 export interface Exam {
   id: number;
@@ -7,19 +7,15 @@ export interface Exam {
   versionExam: string;
   timeDuration: string;
   quantityTotalQuestions: number;
-};
+}
 
+export async function getExam(idExam: number): Promise<Exam> {
+  const examDb: ExamDb = await getExamDb(idExam);
 
-export async function getExam(
-  idExam: number
-  ): Promise<Exam> {
-  const examDb: ExamDb = await getExamDb(idExam)
-  
   const exam: Exam = convertExamDbToExam(examDb);
 
   return exam;
-};
-
+}
 
 function convertExamDbToExam(examDb: ExamDb): Exam {
   return {

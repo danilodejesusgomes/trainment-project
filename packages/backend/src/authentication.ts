@@ -10,11 +10,11 @@ export const authMiddleware = expressjwt({
   secret,
 });
 
-export async function handleLogin(request: any , response: any ) {
+export async function handleLogin(request: any, response: any) {
   console.log('***** starting handleLogin ***** ');
-  const idPerson = 1
-  const email = 'danilodejesusgomes@gmail.com'
-  const password = '123456'
+  const idPerson = 1;
+  const email = 'danilodejesusgomes@gmail.com';
+  const password = '123456';
   //const { email, password } = request.body;
   const user = await getPersonDb(idPerson);
   if (!user || user.password !== password) {
@@ -22,6 +22,6 @@ export async function handleLogin(request: any , response: any ) {
   } else {
     const claims = { sub: user.id, email: user.email };
     const token = jwt.sign(claims, secret);
-    request.json({ token });  
+    request.json({ token });
   }
 }

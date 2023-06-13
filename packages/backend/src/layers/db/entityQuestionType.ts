@@ -1,21 +1,20 @@
-import db_awsimulate from "../../../data-architecture/database";
+import db_awsimulate from '../../../data-architecture/database';
 
 export interface QuestionTypeDb {
   id: number;
   name: string;
   quantityChoose: number;
-};
+}
 
-const getQuestionTypeTable  = () => 
-  db_awsimulate.table('QuestionType');
+const getQuestionTypeTable = () => db_awsimulate.table('QuestionType');
 
 export async function getQuestionTypeDb(
   idQuestionType: number
-  ): Promise<QuestionTypeDb> {
+): Promise<QuestionTypeDb> {
   const questionType: QuestionTypeDb = await getQuestionTypeTable()
     .first()
     .where({ id: idQuestionType });
-  
-    console.log('QuestionType => ', questionType);
+
+  console.log('QuestionType => ', questionType);
   return questionType;
 }
