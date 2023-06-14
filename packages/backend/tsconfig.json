@@ -9,6 +9,7 @@
             "@db/*": ["./src/layers/db/*"],
             "@useCase/*": ["./src/layers/useCase/*"],
             "@graphql/*": ["./src/layers/graphql/*"],
+            "@model/*": ["./src/layers/models/*"],
         }   
     },
 }

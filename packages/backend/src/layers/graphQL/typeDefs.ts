@@ -2,13 +2,13 @@ import gql from 'graphql-tag';
 
 const query = gql`
   type Query {
-    Person(idPerson: ID!): Person
-    Exam(idExam: ID!): Exam
-    Question(idQuestion: ID!): Question
-    QuestionType(idQuestionType: ID!): QuestionType
-    QuestionSubject(idQuestionSubject: ID!): QuestionSubject
-    QuestionAlternative(idQuestionAlternative: ID!): QuestionAlternative
-    QuestionAlternatives(idQuestion: ID!): [QuestionAlternative!]
+    getPerson(idPerson: ID!): Person
+    getExam(idExam: ID!): Exam
+    getQuestion(idQuestion: ID!): Question
+    getQuestionType(idQuestionType: ID!): QuestionType
+    getQuestionSubject(idQuestionSubject: ID!): QuestionSubject
+    getQuestionAlternative(idQuestionAlternative: ID!): QuestionAlternative
+    listQuestionAlternatives(idQuestion: ID!): [QuestionAlternative!]
   }
 
   type Person {

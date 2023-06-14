@@ -17,3 +17,9 @@ export async function getExamDb(idExam: number): Promise<ExamDb> {
   console.log('Exam => ', exam);
   return exam;
 }
+
+export async function listExamDb(): Promise<ExamDb[]> {
+  const exam: ExamDb[] = await getExamTable().orderBy('id').limit(10);
+
+  return exam;
+}
