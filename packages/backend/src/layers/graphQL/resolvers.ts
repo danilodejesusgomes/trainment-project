@@ -1,7 +1,7 @@
 import { notFoundError } from './utils/graphQLError';
 import { getQuestion } from '@useCase/Question';
 import { getPerson } from '@useCase/Person';
-import { getExam } from '@useCase/Exam';
+import { getExam, listExams } from '@useCase/Exam';
 import { getQuestionType } from '@useCase/QuestionType';
 import { getQuestionSubject } from '@useCase/QuestionSubject';
 import {
@@ -24,6 +24,14 @@ export const resolvers = {
         throw notFoundError('No Exam found with id ' + idExam);
       }
       return exam;
+    },
+
+    listExams: async () => {
+      const exams = await listExams();
+      if (!exams) {
+        throw notFoundError('No Exam found');
+      }
+      return exams;
     },
 
     getQuestion: async (_root: any, { idQuestion }: any) => {

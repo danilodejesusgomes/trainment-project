@@ -4,6 +4,7 @@ const query = gql`
   type Query {
     getPerson(idPerson: ID!): Person
     getExam(idExam: ID!): Exam
+    listExams: [Exam!]
     getQuestion(idQuestion: ID!): Question
     getQuestionType(idQuestionType: ID!): QuestionType
     getQuestionSubject(idQuestionSubject: ID!): QuestionSubject
