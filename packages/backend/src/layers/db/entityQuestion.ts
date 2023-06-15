@@ -1,4 +1,4 @@
-import db_awsimulate from '../../../data-architecture/database';
+import db_awsimulate from '@database/index';
 
 export interface QuestionDb {
   id: number;

@@ -1,5 +1,5 @@
 import knex from 'knex';
-import knexConfiguration from '../../knexfile';
+import knexConfiguration from '@backend/knexfile';
 
 const connection = knex(knexConfiguration);
 export default connection;

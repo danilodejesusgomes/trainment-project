@@ -12,7 +12,8 @@
   "author": "danilogomes-encora <danilo.gomes@encora.com>",
   "license": "MIT",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@trainment-project/eslint-config": "*",

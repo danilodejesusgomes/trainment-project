@@ -7,6 +7,10 @@
   "author": "Danilo Gomes",
   "license": "MIT",
   "scripts": {
+    "pretest": "NODE_ENV=test yarn knex migrate:latest && NODE_ENV=test yarn knex seed:run",
+    "test": "NODE_ENV=test vitest",
+    "posttest": "NODE_ENV=test yarn knex migrate:rollback",
+    "coverage": "vitest run --coverage",
     "start": "tsx src/index.ts",
     "start:dev": "tsx watch src/serverContainerGraphQL.ts",
     "build": "tsup src"
@@ -21,6 +25,7 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.13"
+    "@types/cors": "^2.8.13",
+    "sqlite3": "^5.1.6"
   }
 }
