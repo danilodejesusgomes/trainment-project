@@ -12,8 +12,14 @@
   "author": "danilogomes-encora <danilo.gomes@encora.com>",
   "license": "MIT",
   "scripts": {
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "pretest": 
+      "NODE_ENV=test yarn knex migrate:latest --knexpath ./packages/backend --knexfile ./packages/backend/knexfile.ts &&      NODE_ENV=test yarn knex seed:run --knexpath ./packages/backend --knexfile ./packages/backend/knexfile.ts",
+    "test": "NODE_ENV=test vitest run",
+    "posttest": 
+      "NODE_ENV=test yarn knex migrate:rollback --knexpath ./packages/backend --knexfile ./packages/backend/knexfile.ts",
+    "precoverage": "NODE_ENV=test yarn knex migrate:latest && NODE_ENV=test yarn knex seed:run",
+    "coverage": "NODE_ENV=test vitest run --coverage",
+    "postcoverage": "NODE_ENV=test yarn knex migrate:rollback"
   },
   "devDependencies": {
     "@trainment-project/eslint-config": "*",

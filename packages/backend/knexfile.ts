@@ -7,9 +7,6 @@
 import { Knex } from 'knex';
 import path from 'path';
 
-console.log('dirname1 ===> ', __dirname);
-console.log('dirname2 ===> ', path.resolve(__dirname));
-
 const testEnvironment = {
   client: 'sqlite3',
   connection: {
@@ -72,8 +69,6 @@ const developmentEnvironment = {
     ),
   },
 };
-
-console.log('NODE_ENV ===> ', process.env.NODE_ENV);
 
 const knexConfiguration: Knex.Config =
   process.env.NODE_ENV === 'test' ? testEnvironment : developmentEnvironment;

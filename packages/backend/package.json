@@ -8,9 +8,11 @@
   "license": "MIT",
   "scripts": {
     "pretest": "NODE_ENV=test yarn knex migrate:latest && NODE_ENV=test yarn knex seed:run",
-    "test": "NODE_ENV=test vitest",
+    "test": "NODE_ENV=test vitest run",
     "posttest": "NODE_ENV=test yarn knex migrate:rollback",
-    "coverage": "vitest run --coverage",
+    "precoverage": "NODE_ENV=test yarn knex migrate:latest && NODE_ENV=test yarn knex seed:run",
+    "coverage": "NODE_ENV=test vitest run --coverage",
+    "postcoverage": "NODE_ENV=test yarn knex migrate:rollback",
     "start": "tsx src/index.ts",
     "start:dev": "tsx watch src/serverContainerGraphQL.ts",
     "build": "tsup src"
