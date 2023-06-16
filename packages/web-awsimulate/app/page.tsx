@@ -3,11 +3,6 @@ import React from 'react';
 import SidebarNavigation from './components/organisms/SidebarNavigation';
 
 export default function Page() {
-  const handleClick = () => {
-    // Lógica a ser executada quando o botão for clicado
-    console.log('Botão clicado!');
-  };
-
   return (
     <div className="flex">
       <SidebarNavigation />

@@ -12,6 +12,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
     'plugin:react/recommended',
+    'plugin:@next/next/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -30,7 +31,7 @@ module.exports = {
       {"packageDir": [
         './',
         './packages/backend/',
-        './packages/web-awsimulate/'
+        './packages/web-awsimulate/',
       ]}
     ]
   },

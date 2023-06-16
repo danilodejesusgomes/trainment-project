@@ -12,11 +12,9 @@
   "author": "danilogomes-encora <danilo.gomes@encora.com>",
   "license": "MIT",
   "scripts": {
-    "pretest": 
-      "NODE_ENV=test yarn knex migrate:latest --knexpath ./packages/backend --knexfile ./packages/backend/knexfile.ts &&      NODE_ENV=test yarn knex seed:run --knexpath ./packages/backend --knexfile ./packages/backend/knexfile.ts",
+    "pretest": "NODE_ENV=test yarn knex migrate:latest --knexpath ./packages/backend --knexfile ./packages/backend/knexfile.ts &&      NODE_ENV=test yarn knex seed:run --knexpath ./packages/backend --knexfile ./packages/backend/knexfile.ts",
     "test": "NODE_ENV=test vitest run",
-    "posttest": 
-      "NODE_ENV=test yarn knex migrate:rollback --knexpath ./packages/backend --knexfile ./packages/backend/knexfile.ts",
+    "posttest": "NODE_ENV=test yarn knex migrate:rollback --knexpath ./packages/backend --knexfile ./packages/backend/knexfile.ts",
     "precoverage": "NODE_ENV=test yarn knex migrate:latest && NODE_ENV=test yarn knex seed:run",
     "coverage": "NODE_ENV=test vitest run --coverage",
     "postcoverage": "NODE_ENV=test yarn knex migrate:rollback"
@@ -30,6 +28,7 @@
     "vitest": "^0.31.4"
   },
   "dependencies": {
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "graphql-request": "^6.1.0"
   }
 }
